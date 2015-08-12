@@ -2,7 +2,7 @@
 
 <h3>Here are the COMPACT DISCS in this COLLECTION:</h3>
 <ul>
-  <% @cd.each() do |cd| %>
+  <% @cds.each() do |cd| %>
     <li><a href="/cds/<%= cd.id() %>"><%= cd.title() %></a></li>
   <% end %>
 </ul>
