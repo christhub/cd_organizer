@@ -27,4 +27,8 @@ class CD
     @@all_cds.push(self)
   end
 
+  define_singleton_method(:clear) do
+    @@all_cds = []
+  end
+
 end

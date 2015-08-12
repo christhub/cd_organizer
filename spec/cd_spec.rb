@@ -2,6 +2,10 @@ require('rspec')
 require('cd')
 
 describe(CD) do
+  before() do
+    CD.clear()
+  end
+
   describe('#title') do
     it('returns the title of the CD') do
       new_cd = CD.new('Currents', 'Tame Impala', 2015)
@@ -34,6 +38,14 @@ describe(CD) do
       new_cd = CD.new('Currents', 'Tame Impala', 2015)
       new_cd.save()
       expect(CD.all()).to(eq([new_cd]))
+    end
+  end
+
+  describe('.clear') do
+    it('empties out all of the saved CDs') do
+      new_cd = CD.new('Currents', 'Tame Impala', 2015).save()
+      CD.clear()
+      expect(CD.all()).to(eq([]))
     end
   end
 
