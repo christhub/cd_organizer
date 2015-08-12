@@ -16,11 +16,13 @@ describe(Artist) do
       expect(test_artist.id()).to(eq(1))
     end
   end
-  #
-  # describe('#cd') do
-  #   it('returns an empty array of cds for the artist') do
-  #     test_artist
-  #   end
+
+  describe('#artists') do
+    it('initially returns an empty array of cds for the artist') do
+      test_artist = Artist.new('Tame Impala')
+      expect(test_artist.cds()).to(eq([]))
+    end
+  end
 
   describe('.all') do
     it('returns an empty array') do
@@ -43,4 +45,14 @@ describe(Artist) do
      expect(Artist.clear()).to(eq([]))
    end
  end
+
+ # describe('.find') do
+ #   it('returns a dealership by its ID number') do
+ #     test_cd = CD.new('Abbey Road')
+ #     test_artist = Artist.new('The Beatles')
+ #     test_cd = CD.new('Currents')
+ #     test_artist = Artist.new('Tame Impala')
+ #   end
+ # end
+
 end
