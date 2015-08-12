@@ -54,14 +54,14 @@ describe(Artist) do
      test_artist2.save()
    end
  end
- #
- # describe('#add_cd') do
- #   it('adds a new cd to a artist') do
- #     test_artist = Artist.new('Tame Impala')
- #     test_cd = CD.new('Currents')
- #     test_artist.add_cd(test_cd)
- #     expect((test_artist.cds())).to(eq([test_cd]))
- #   end
- # end
+
+ describe('#add_cd') do
+   it('adds a new cd to a artist') do
+     test_artist = Artist.new('Tame Impala')
+     test_cd = CD.new('Currents', 2015)
+     test_artist.add_cd(test_cd)
+     expect((test_artist.cds())).to(eq([test_cd]))
+   end
+ end
 
 end

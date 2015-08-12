@@ -44,8 +44,8 @@ class Artist
     end
     found_artist
   end
-  #
-  # define_method(:add_cd) do |cd|
-  #   @cds.push(cd)
-  # end
+  
+  define_method(:add_cd) do |cd|
+    @cds.push(cd)
+  end
 end
