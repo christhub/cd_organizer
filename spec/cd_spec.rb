@@ -23,4 +23,18 @@ describe(CD) do
     end
   end
 
+  describe('.all') do
+    it('is empty at first') do
+      expect(CD.all()).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it('adds a CD to the array of saved CDs') do
+      new_cd = CD.new('Currents', 'Tame Impala', 2015)
+      new_cd.save()
+      expect(CD.all()).to(eq([new_cd]))
+    end
+  end
+
 end
