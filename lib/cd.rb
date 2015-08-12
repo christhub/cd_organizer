@@ -1,9 +1,8 @@
 class CD
   @@all_cds = []
 
-  define_method(:initialize) do |title, artist, year|
+  define_method(:initialize) do |title, year|
     @title = title
-    @artist = artist
     @year = year
   end
 
