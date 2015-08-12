@@ -1,0 +1,15 @@
+<h1>Add an cd to <%= @artist.name() %></h1>
+<form action="/cds" method="post">
+  <input id='cd_id' name='cd_id' type='hidden' value='<%= @artist.id() %>'>
+
+  <label for='title'>CD title:</label>
+  <input id='title' name='title' type='text'>
+
+  <label for='artist'>CD artist:</label>
+  <input id='artist' name='artist' type='text'>
+
+  <label for='year'>CD year:</label>
+  <input id='year' name='year' type='text'>
+
+  <button type="submit">Add COMPACT DISC</button>
+</form>

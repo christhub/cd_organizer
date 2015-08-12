@@ -2,29 +2,45 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/cd')
+require('./lib/artist')
+
 
 get('/') do
   erb(:index)
 end
 
-get('/cds') do
-  @cds = CD.all()
-  erb(:cds)
+get('/artist/new') do
+  erb(:artists_form)
 end
 
-get ('/cds/new') do
-  erb(:cd_form)
+get('/artists') do
+  @artists = Artist.all()
+  erb(:artists)
 end
 
-post ('/cds') do
-  title = params.fetch("title")
-  year = params.fetch("year").to_s()
-  cd = CD.new(title, year)
-  cd.save()
+post('/artists') do
+  name = params.fetch('name')
+  Artist.new(name).save()
+  @artists = Artist.all()
   erb(:success)
 end
 
-get('/cds/:id') do
-  @cd = CD.find(params.fetch('id').to_i())
-  erb(:cd)
+get('/artists/:id') do
+  @artist = Artist.find(params.fetch('id').to_i)
+  erb(:artist)
+end
+
+get('/artists/:id/cds/new') do
+  @artist = Cd.find(params.fetch('id').to_id())
+  erb(:cd_artist_form)
+end
+
+post('/cds') do
+  title = params.fetch("title")
+  year = params.fetch("year")
+  @cd = CD.new(title, year)
+  @cd.save()
+  @artist = Artist.find(params.fetch('cd_id').to_i)
+  @artist.add_artist(@artist)
+  erb(:success)
 end

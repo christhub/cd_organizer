@@ -1,0 +1,8 @@
+<h2>Here are all the CDs for this Artist:</h2>
+<ul>
+<% @artist.cars().each() do |artist| %>
+<li><a href = "/artists/<%= cd.id() %>"> <%= cd.id() %> <%= cd.years() %></a></li>
+</ul>
+
+<a href="/cds/<%= @cd.id() %>/artists/new">Add a new a artist </a>
+<a href="/">return to the main page</a>

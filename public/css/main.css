@@ -1,0 +1,9 @@
+body {
+  text-align: center;
+}
+
+.container {
+  display: relative;
+  top: 55%;
+  transform: translateY(250%);
+}
