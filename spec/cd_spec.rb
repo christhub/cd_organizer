@@ -42,4 +42,22 @@ describe(CD) do
     end
   end
 
+  describe('#id') do
+    it('returns the id of the CD') do
+      new_cd = CD.new("Currents", 2015)
+      new_cd.save()
+      expect(new_cd.id()).to(eq(1))
+    end
+  end
+
+  describe('.find') do
+    it('returns a vehicle by its ID number') do
+      new_cd = CD.new("Currents", 2015)
+      new_cd.save()
+      new_cd2 = CD.new("Lonerism", 2012)
+      new_cd2.save()
+      expect(CD.find(new_cd.id())).to(eq(new_cd))
+    end
+  end
+
 end
