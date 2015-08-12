@@ -3,13 +3,16 @@ class Artist
 
   define_method(:initialize) do |name|
     @name = name
+    @id = @@artists.length().+(1)
   end
 
   define_method(:name) do
     @name
   end
 
-  # define_method(:id) do
+  define_method(:id) do
+    @id
+  end
 
   define_singleton_method(:all) do
     @@artists
