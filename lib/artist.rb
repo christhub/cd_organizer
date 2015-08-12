@@ -12,7 +12,14 @@ class Artist
   # define_method(:id) do
 
   define_singleton_method(:all) do
-   @@artists
+    @@artists
   end
 
+  define_method(:save) do
+    @@artists.push(self)
+  end
+
+  define_singleton_method(:clear) do
+    @@artists = []
+  end
 end

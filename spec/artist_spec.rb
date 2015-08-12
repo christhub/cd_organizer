@@ -28,4 +28,19 @@ describe(Artist) do
    end
  end
 
+ describe('#save') do
+   it('adds an artist to the array of artists') do
+     test_artist = Artist.new('The Beatles')
+     test_artist.save()
+     expect(Artist.all()).to(eq([test_artist]))
+   end
+ end
+
+ describe('#clear') do
+   it('adds a clear function to clear it') do
+     test_artist = Artist.new('Rihanna')
+     test_artist.save()
+     expect(Artist.clear()).to(eq([]))
+   end
+ end
 end
