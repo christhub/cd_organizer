@@ -14,7 +14,7 @@ describe(CD) do
   end
 
   describe('#year') do
-    it('returns the title of the CD') do
+    it('returns the year of the CD') do
       new_cd = CD.new('Currents', 2015)
       expect(new_cd.year()).to(eq(2015))
     end
